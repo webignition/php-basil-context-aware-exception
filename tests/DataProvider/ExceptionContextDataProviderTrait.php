@@ -1,29 +1,13 @@
 <?php
 /** @noinspection PhpDocSignatureInspection */
 
-namespace webignition\BasilContextAwareException\Tests\ExceptionContext;
+namespace webignition\BasilContextAwareException\Tests\DataProvider;
 
 use webignition\BasilContextAwareException\ExceptionContext\ExceptionContext;
 
-class ExceptionContextTest extends \PHPUnit\Framework\TestCase
+trait ExceptionContextDataProviderTrait
 {
-    /**
-     * @dataProvider createDataProvider
-     */
-    public function testCreate(
-        array $values,
-        ?string $expectedTestName,
-        ?string $expectedStepName,
-        ?string $expectedContent
-    ) {
-        $exceptionContext = new ExceptionContext($values);
-
-        $this->assertSame($expectedTestName, $exceptionContext->getTestName());
-        $this->assertSame($expectedStepName, $exceptionContext->getStepName());
-        $this->assertSame($expectedContent, $exceptionContext->getContent());
-    }
-
-    public function createDataProvider(): array
+    public function exceptionContextDataProvider(): array
     {
         return [
             'empty' => [
