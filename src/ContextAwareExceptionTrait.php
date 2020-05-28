@@ -6,10 +6,7 @@ use webignition\BasilContextAwareException\ExceptionContext\ExceptionContextInte
 
 trait ContextAwareExceptionTrait
 {
-    /**
-     * @var ExceptionContextInterface
-     */
-    private $exceptionContext;
+    private ExceptionContextInterface $exceptionContext;
 
     public function getExceptionContext(): ExceptionContextInterface
     {

@@ -4,9 +4,9 @@ namespace webignition\BasilContextAwareException\ExceptionContext;
 
 class ExceptionContext implements ExceptionContextInterface
 {
-    private $testName;
-    private $stepName;
-    private $content;
+    private ?string $testName = null;
+    private ?string $stepName = null;
+    private ?string $content = null;
 
     public function __construct(array $values = [])
     {
@@ -30,20 +30,8 @@ class ExceptionContext implements ExceptionContextInterface
 
     public function apply(array $values)
     {
-        $testName = $values[self::KEY_TEST_NAME] ?? null;
-        $stepName = $values[self::KEY_STEP_NAME] ?? null;
-        $content = $values[self::KEY_CONTENT] ?? null;
-
-        if ($testName) {
-            $this->testName = $testName;
-        }
-
-        if ($stepName) {
-            $this->stepName = $stepName;
-        }
-
-        if ($content) {
-            $this->content = $content;
-        }
+        $this->testName = $values[self::KEY_TEST_NAME] ?? null;
+        $this->stepName = $values[self::KEY_STEP_NAME] ?? null;
+        $this->content = $values[self::KEY_CONTENT] ?? null;
     }
 }
