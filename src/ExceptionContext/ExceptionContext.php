@@ -30,8 +30,20 @@ class ExceptionContext implements ExceptionContextInterface
 
     public function apply(array $values)
     {
-        $this->testName = $values[self::KEY_TEST_NAME] ?? null;
-        $this->stepName = $values[self::KEY_STEP_NAME] ?? null;
-        $this->content = $values[self::KEY_CONTENT] ?? null;
+        $testName = $values[self::KEY_TEST_NAME] ?? null;
+        $stepName = $values[self::KEY_STEP_NAME] ?? null;
+        $content = $values[self::KEY_CONTENT] ?? null;
+
+        if (null !== $testName) {
+            $this->testName = $testName;
+        }
+
+        if (null !== $stepName) {
+            $this->stepName = $stepName;
+        }
+
+        if (null !== $content) {
+            $this->content = $content;
+        }
     }
 }
