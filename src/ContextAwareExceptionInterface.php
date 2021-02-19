@@ -7,5 +7,9 @@ use webignition\BasilContextAwareException\ExceptionContext\ExceptionContextInte
 interface ContextAwareExceptionInterface
 {
     public function getExceptionContext(): ExceptionContextInterface;
-    public function applyExceptionContext(array $values);
+
+    /**
+     * @param array<string|null> $values
+     */
+    public function applyExceptionContext(array $values): void;
 }

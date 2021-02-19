@@ -12,13 +12,15 @@ class ExceptionContextTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @dataProvider exceptionContextDataProvider
+     *
+     * @param array<string|null> $values
      */
     public function testCreate(
         array $values,
         ?string $expectedTestName,
         ?string $expectedStepName,
         ?string $expectedContent
-    ) {
+    ): void {
         $exceptionContext = new ExceptionContext($values);
 
         $this->assertSame($expectedTestName, $exceptionContext->getTestName());
@@ -37,12 +39,15 @@ class ExceptionContextTest extends \PHPUnit\Framework\TestCase
         ExceptionContextInterface $exceptionContext,
         array $values,
         ExceptionContextInterface $expectedExceptionContext
-    ) {
+    ): void {
         $exceptionContext->apply($values);
 
         $this->assertEquals($expectedExceptionContext, $exceptionContext);
     }
 
+    /**
+     * @return array[]
+     */
     public function applyDataProvider(): array
     {
         return [

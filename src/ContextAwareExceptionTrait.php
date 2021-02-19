@@ -13,7 +13,7 @@ trait ContextAwareExceptionTrait
         return $this->exceptionContext;
     }
 
-    public function applyExceptionContext(array $values)
+    public function applyExceptionContext(array $values): void
     {
         $this->exceptionContext->apply($values);
     }
