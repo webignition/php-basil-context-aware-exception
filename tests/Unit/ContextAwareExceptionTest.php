@@ -11,13 +11,15 @@ class ContextAwareExceptionTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @dataProvider exceptionContextDataProvider
+     *
+     * @param array<string|null> $values
      */
     public function testCreate(
         array $values,
         ?string $expectedTestName,
         ?string $expectedStepName,
         ?string $expectedContent
-    ) {
+    ): void {
         $contextAwareException = new ContextAwareException($values);
 
         $exceptionContext = $contextAwareException->getExceptionContext();

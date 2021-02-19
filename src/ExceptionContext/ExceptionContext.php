@@ -8,6 +8,9 @@ class ExceptionContext implements ExceptionContextInterface
     private ?string $stepName = null;
     private ?string $content = null;
 
+    /**
+     * @param array<string|null> $values
+     */
     public function __construct(array $values = [])
     {
         $this->apply($values);
@@ -28,7 +31,7 @@ class ExceptionContext implements ExceptionContextInterface
         return $this->content;
     }
 
-    public function apply(array $values)
+    public function apply(array $values): void
     {
         $testName = $values[self::KEY_TEST_NAME] ?? null;
         $stepName = $values[self::KEY_STEP_NAME] ?? null;

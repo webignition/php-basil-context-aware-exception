@@ -6,6 +6,9 @@ use webignition\BasilContextAwareException\ExceptionContext\ExceptionContext;
 
 trait ExceptionContextDataProviderTrait
 {
+    /**
+     * @return array[]
+     */
     public function exceptionContextDataProvider(): array
     {
         return [
