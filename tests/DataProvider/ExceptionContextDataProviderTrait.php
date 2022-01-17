@@ -2,12 +2,12 @@
 
 namespace webignition\BasilContextAwareException\Tests\DataProvider;
 
-use webignition\BasilContextAwareException\ExceptionContext\ExceptionContext;
+use webignition\BasilContextAwareException\ExceptionContext\ExceptionContextInterface;
 
 trait ExceptionContextDataProviderTrait
 {
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function exceptionContextDataProvider(): array
     {
@@ -20,7 +20,7 @@ trait ExceptionContextDataProviderTrait
             ],
             'test name only' => [
                 'values' => [
-                    ExceptionContext::KEY_TEST_NAME => 'test name',
+                    ExceptionContextInterface::KEY_TEST_NAME => 'test name',
                 ],
                 'expectedTestName' => 'test name',
                 'expectedStepName' => null,
@@ -28,7 +28,7 @@ trait ExceptionContextDataProviderTrait
             ],
             'step name only' => [
                 'values' => [
-                    ExceptionContext::KEY_STEP_NAME => 'step name',
+                    ExceptionContextInterface::KEY_STEP_NAME => 'step name',
                 ],
                 'expectedTestName' => null,
                 'expectedStepName' => 'step name',
@@ -36,7 +36,7 @@ trait ExceptionContextDataProviderTrait
             ],
             'content only' => [
                 'values' => [
-                    ExceptionContext::KEY_CONTENT => 'content',
+                    ExceptionContextInterface::KEY_CONTENT => 'content',
                 ],
                 'expectedTestName' => null,
                 'expectedStepName' => null,
@@ -44,9 +44,9 @@ trait ExceptionContextDataProviderTrait
             ],
             'all values' => [
                 'values' => [
-                    ExceptionContext::KEY_TEST_NAME => 'test name',
-                    ExceptionContext::KEY_STEP_NAME => 'step name',
-                    ExceptionContext::KEY_CONTENT => 'content',
+                    ExceptionContextInterface::KEY_TEST_NAME => 'test name',
+                    ExceptionContextInterface::KEY_STEP_NAME => 'step name',
+                    ExceptionContextInterface::KEY_CONTENT => 'content',
                 ],
                 'expectedTestName' => 'test name',
                 'expectedStepName' => 'step name',

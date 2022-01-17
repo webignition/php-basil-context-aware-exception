@@ -9,7 +9,7 @@ class ExceptionContext implements ExceptionContextInterface
     private ?string $content = null;
 
     /**
-     * @param array<string|null> $values
+     * @param array<null|string> $values
      */
     public function __construct(array $values = [])
     {

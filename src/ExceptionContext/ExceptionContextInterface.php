@@ -9,11 +9,13 @@ interface ExceptionContextInterface
     public const KEY_CONTENT = 'content';
 
     public function getTestName(): ?string;
+
     public function getStepName(): ?string;
+
     public function getContent(): ?string;
 
     /**
-     * @param array<string|null> $values
+     * @param array<null|string> $values
      */
     public function apply(array $values): void;
 }
