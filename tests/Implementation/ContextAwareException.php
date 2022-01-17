@@ -11,7 +11,7 @@ class ContextAwareException extends \Exception implements ContextAwareExceptionI
     use ContextAwareExceptionTrait;
 
     /**
-     * @param array<string|null> $values
+     * @param array<null|string> $values
      */
     public function __construct(array $values)
     {

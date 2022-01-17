@@ -13,7 +13,7 @@ class ExceptionContextTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider exceptionContextDataProvider
      *
-     * @param array<string|null> $values
+     * @param array<null|string> $values
      */
     public function testCreate(
         array $values,
@@ -31,9 +31,7 @@ class ExceptionContextTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider applyDataProvider
      *
-     * @param ExceptionContextInterface $exceptionContext
-     * @param array<string, string|null> $values
-     * @param ExceptionContextInterface $expectedExceptionContext
+     * @param array<string, null|string> $values
      */
     public function testApply(
         ExceptionContextInterface $exceptionContext,

@@ -9,7 +9,7 @@ interface ContextAwareExceptionInterface
     public function getExceptionContext(): ExceptionContextInterface;
 
     /**
-     * @param array<string|null> $values
+     * @param array<null|string> $values
      */
     public function applyExceptionContext(array $values): void;
 }
